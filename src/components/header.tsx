@@ -41,7 +41,7 @@ function Header() {
     */
     useEffect(() => {
         const shoeImages = document.querySelectorAll('.shoe-img');
-        const handleClick = (e) => {
+        const handleClick = (e:any) => {
           const targetElement = e.target as HTMLElement;
           if (targetElement) {
             targetElement.classList.add('animate');

@@ -249,7 +249,7 @@ html, body {
 }
 @keyframes moveToCenter {
   0% {
-    postion: relative;
+    position: relative;
   }
   15% {
     position: fixed;

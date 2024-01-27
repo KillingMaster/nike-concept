@@ -612,6 +612,12 @@ html, body {
 
 /*if screen is less than 1440px show nothing*/
 @media (max-width: 1439px) {
+  .loader {
+    display: none;
+  }
+  .hidden {
+    display: none;
+  }
   .header {
     display: none;
   }

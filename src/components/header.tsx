@@ -63,6 +63,17 @@ function Header() {
         };
       }, []);
 
+    //loader for the page
+    useEffect(() => {
+        window.onload = () => {
+            const loader = document.querySelector('.loader');
+            console.log(loader);
+            if (loader) {
+                loader.classList.add('hidden');
+            }
+        };
+    }, []);
+
 
 
     return (
@@ -206,6 +217,9 @@ function Header() {
                         Try on at least 1440px width screen.
                     </div>
                 </div>
+            </div>
+            <div className="loader">
+                
             </div>
         </>
     )

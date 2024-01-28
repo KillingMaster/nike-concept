@@ -34,6 +34,19 @@ function Header() {
         }
     }
 
+      //loader for the page
+      useEffect(() => {
+        window.onload = () => {
+            setTimeout(() => {
+                setIsLoaded(true);
+            const loader = document.querySelector('.loader');
+            if (loader) {
+                loader.classList.add('hidden');
+            }
+            } , 1000);
+        };
+    }, []);
+
     //useEffect to close dropdown when clicked outside
     useEffect(() => {
         const handleClickOutside = (event: any) => {
@@ -45,7 +58,7 @@ function Header() {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    } , [dropRef]);
+    } , [dropRef,isLoaded]);
 
     /*
     when clicked on one of the shoes elements, animate the image as if it is moved to 
@@ -75,20 +88,9 @@ function Header() {
             img.removeEventListener('click', handleClick);
           });
         };
-      }, []);
+      }, [isLoaded]);
 
-    //loader for the page
-    useEffect(() => {
-        window.onload = () => {
-            setTimeout(() => {
-                setIsLoaded(true);
-            const loader = document.querySelector('.loader');
-            if (loader) {
-                loader.classList.add('hidden');
-            }
-            } , 1000);
-        };
-    }, []);
+  
 
 
 

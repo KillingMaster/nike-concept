@@ -8,6 +8,7 @@ function Header() {
     const [mainImageSrc, setMainImageSrc] = useState('red.svg');
     const [showSearchDropdown, setShowSearchDropdown] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
     const dropRef = useRef<HTMLDivElement>(null);
     //dict to map color to image src. kkey is image src, value is color name
     const colorMap: { [key: string]: string } = {
@@ -79,18 +80,22 @@ function Header() {
     //loader for the page
     useEffect(() => {
         window.onload = () => {
+            setTimeout(() => {
+                setIsLoaded(true);
             const loader = document.querySelector('.loader');
             if (loader) {
                 loader.classList.add('hidden');
             }
+            } , 1000);
         };
     }, []);
 
 
 
+
     return (
         <>
-            <div className="header">
+            {isLoaded && <div className="header">
                 <div className="navbar">
                     <div className="logo-container" style={{ cursor: 'pointer' }} onClick={() => window.location.reload()}>
                         <Logos />
@@ -217,7 +222,7 @@ function Header() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> }
             <div className="resolution-not-supported">
                 <div className="content">
                     <div className="title">

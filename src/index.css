@@ -251,12 +251,29 @@ html, body {
   0% {
     position: relative;
   }
+  2% {
+    position: fixed;
+    top: 90%;
+    bottom: 10%;
+    left: 20%;
+    right: 20%;
+    scale: 1;
+  }
+  5% {
+    position: fixed;
+    top: 50%;
+    bottom: 30%;
+    left: 25%;
+    right:25%;
+    scale: 2;
+  }
   15% {
     position: fixed;
     top: 50%;
     bottom: 30%;
     left: 30%;
     right: 30%;
+    scale: 3;
   }
   30% {
     position: fixed;
@@ -264,18 +281,29 @@ html, body {
     bottom: 30%;
     left: 35%;
     right: 35%;
+    scale: 4;
+  }
+  97% {
+    scale: 9;
+  }
+  98% {
+    scale: 10;
+  }
+  99% {
+    scale: 11;
   }
   100% {
     position: fixed;
-    top: 40 %;
+    top: 20 %;
     bottom: 40%;
     left: 40%;
     right: 40%;
+    scale: 12;
   }
 }
 
 .shoe-img.animate {
-  animation: moveToCenter 0.3s forwards;
+  animation: moveToCenter 0.3s ease-in-out forwards;
 }
 .buttons-container {
   display: flex;

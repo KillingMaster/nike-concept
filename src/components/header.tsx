@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 function Header() {
     const [mainImageSrc, setMainImageSrc] = useState('red.svg');
     const [showSearchDropdown, setShowSearchDropdown] = useState(false);
+    const [isAnimating, setIsAnimating] = useState(false);
     const dropRef = useRef<HTMLDivElement>(null);
     //dict to map color to image src. kkey is image src, value is color name
     const colorMap: { [key: string]: string } = {
@@ -17,9 +18,19 @@ function Header() {
 
 
     const colorChange = (mainImageSrc: string) => {
-        setMainImageSrc(mainImageSrc);
-        // set css variable value main-background:
-        document.documentElement.style.setProperty('--main-background', `${colorMap[mainImageSrc]}`);
+       //wait for animation to finish
+        if (isAnimating) {
+            setTimeout(() => {
+                setMainImageSrc(mainImageSrc);
+                // set css variable value main-background:
+                document.documentElement.style.setProperty('--main-background', `${colorMap[mainImageSrc]}`);
+            }, 350);
+        } else {
+            setMainImageSrc(mainImageSrc);
+            setMainImageSrc(mainImageSrc);
+            // set css variable value main-background:
+            document.documentElement.style.setProperty('--main-background', `${colorMap[mainImageSrc]}`);
+        }
     }
 
     //useEffect to close dropdown when clicked outside
@@ -45,8 +56,10 @@ function Header() {
           const targetElement = e.target as HTMLElement;
           if (targetElement) {
             targetElement.classList.add('animate');
+            setIsAnimating(true);
             targetElement.addEventListener('animationend', function() {
               targetElement.classList.remove('animate');
+              setIsAnimating(false);
             });
           }
         };
@@ -67,7 +80,6 @@ function Header() {
     useEffect(() => {
         window.onload = () => {
             const loader = document.querySelector('.loader');
-            console.log(loader);
             if (loader) {
                 loader.classList.add('hidden');
             }

@@ -214,7 +214,8 @@ function Header() {
                     <div className="description">
                         Sorry, this page is not supported on your resolution, please try again on a larger screen.
                         It might never be supported as i'm missing the complete figma design.
-                        Try on at least 1440px width screen.
+                        Try on at least 980px width screen. 
+                        Best Experience  still start from laptop (1024px width) and above.
                     </div>
                 </div>
             </div>

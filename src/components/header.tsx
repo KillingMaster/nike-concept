@@ -25,7 +25,7 @@ function Header() {
                 setMainImageSrc(mainImageSrc);
                 // set css variable value main-background:
                 document.documentElement.style.setProperty('--main-background', `${colorMap[mainImageSrc]}`);
-            }, 350);
+            }, 925);
         } else {
             setMainImageSrc(mainImageSrc);
             setMainImageSrc(mainImageSrc);

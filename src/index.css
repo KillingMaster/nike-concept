@@ -259,21 +259,13 @@ html, body {
     right: 20%;
     scale: 1;
   }
-  5% {
-    position: fixed;
-    top: 50%;
-    bottom: 30%;
-    left: 25%;
-    right:25%;
-    scale: 2;
-  }
   15% {
     position: fixed;
     top: 50%;
     bottom: 30%;
     left: 30%;
     right: 30%;
-    scale: 3;
+    scale: 1;
   }
   30% {
     position: fixed;
@@ -281,16 +273,7 @@ html, body {
     bottom: 30%;
     left: 35%;
     right: 35%;
-    scale: 4;
-  }
-  97% {
-    scale: 9;
-  }
-  98% {
-    scale: 10;
-  }
-  99% {
-    scale: 11;
+    scale: 1;
   }
   100% {
     position: fixed;
@@ -298,12 +281,12 @@ html, body {
     bottom: 40%;
     left: 40%;
     right: 40%;
-    scale: 12;
+    scale: 13;
   }
 }
 
 .shoe-img.animate {
-  animation: moveToCenter 0.3s ease-in-out forwards;
+  animation: moveToCenter 0.85s cubic-bezier(1,1.02,1,.6) forwards;
 }
 .shoe-img:hover {
   cursor: pointer;

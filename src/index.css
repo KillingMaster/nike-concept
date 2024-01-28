@@ -644,6 +644,13 @@ html, body {
 
 
 @media (min-width: 1024px) and (max-width: 1173px) {
+
+  .hidden {
+    display: none;
+  }
+  .loader::before .hidden {
+    display: none;
+  }
   .centered-hero-img-container {
     position: absolute;
     top: 15%;
@@ -692,6 +699,12 @@ html, body {
   }
 }
 @media (min-width: 891px) and (max-width: 1023px) {
+  .hidden {
+    display: none;
+  }
+  .loader::before .hidden {
+    display: none;
+  }
   .centered-hero-img-container {
     position: absolute;
     top: 15%;
